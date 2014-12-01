@@ -2,7 +2,7 @@ var express = require('express'),
     morgan  = require('morgan'),
     path = require('path'),
     sportRoutes = require('./routes/sportRoutes'),
-    dbRoutes = require('./routes/dbRoutes').
+    dbRoutes = require('./routes/dbRoutes'),
     session = require('express-session');
 
 // Create a class that will be our main application
