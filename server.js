@@ -89,6 +89,9 @@ var SimpleStaticServer = function() {
      */
     self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
     self.port      = process.env.OPENSHIFT_NODEJS_PORT || 33333;
+    self.host      = process.env.OPENSHIFT_MONGODB_DB_HOST;
+
+    console.log('host'+ self.host);
 
     //  Start listening on the specific IP and PORT
     self.app.listen(self.port, self.ipaddress, function() {

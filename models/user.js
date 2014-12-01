@@ -6,15 +6,7 @@ var mongoClient = require('mongodb').MongoClient;
  * The typical mongodb port is 27012
  * The path part (here "fallTest") is the name of the databas
  */
-var url = '127.0.0.1:27017/esport';
-// if OPENSHIFT env variables are present, use the available connection info:
-if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
-  url = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
-  process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
-  process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-  process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
-  process.env.OPENSHIFT_APP_NAME;
-}
+var url = 'mongodb://admin:3LB-WfVvI38W@'+process.env.OPENSHIFT_MONGODB_DB_HOST+':33333/esport'
 //var url = 'mongodb://localhost:27017/Esport';
 var mongoDB; // The connected database
 // Use connect method to connect to the Server
