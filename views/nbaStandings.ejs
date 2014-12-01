@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/underscore.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../home">Esport</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+            <a class="btn btn-success" href='../../signup'>Sign Up</a>
+            <a class="btn btn-success" href='../../users'>Users</a>
+          </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+		<h1>NBA 2014 Standings</h1>
+	  </div>
+	</div>
+
+	<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+		      <h2><%= obj['league']['season'][0]['conference'][0]['$'].name %></h2>
+          <h3><%= obj['league']['season'][0]['conference'][0]['division'][0]['$'].name %></h3>
+          <table class='table table-striped table-hover table-bordered'>
+          <tr>
+            <td>Name</td>
+            <td>W</td>
+            <td>L</td>
+            <td>PCT</td>
+            <td>GB</td>
+             <td>PF</td>
+            <td>PA</td>
+            <td>CONF</td>
+            <td>DIV</td>
+            <td>HOME</td>
+            <td>ROAD</td>
+            <td>L10&nbsp&nbsp&nbsp&nbsp</td>
+            <td>STRK</td>
+          <% for (var i = 0; i<obj['league']['season'][0]['conference'][0]['division'][0]['team'].length; i++) { %>
+            <tr>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].market %> <%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].name %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].wins %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].win_pct%></td>
+              <td><%=obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['games-behind'][0]['$'].division %></td>
+               <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].points_for%></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['$'].points_against%></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['conference'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['conference'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['division'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['division'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['home'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['home'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['road'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['road'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['last_10'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['last_10'][0]['$'].losses %></td>
+                <% if(obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['streak'][0]['loss'] != undefined) { %>
+                  <td>L<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['streak'][0]['loss'][0]['$'].length %></td>
+                <% } else { %>
+                  <td>W<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['streak'][0]['win'][0]['$'].length %></td>
+                <% } %>
+            <% } %>
+            </tr>
+          </table>
+          <h3><%= obj['league']['season'][0]['conference'][0]['division'][1]['$'].name %></h3>
+          <table class='table table-striped table-hover table-bordered'>
+          <tr>
+            <td>Name</td>
+            <td>W</td>
+            <td>L</td>
+            <td>PCT</td>
+            <td>GB</td>
+             <td>PF</td>
+            <td>PA</td>
+            <td>CONF</td>
+            <td>DIV</td>
+            <td>HOME</td>
+            <td>ROAD</td>
+            <td>L10&nbsp&nbsp&nbsp&nbsp</td>
+            <td>STRK</td>
+          <% for (var i = 0; i<obj['league']['season'][0]['conference'][0]['division'][1]['team'].length; i++) { %>
+            <tr>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].market %> <%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].name %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].wins %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].win_pct%></td>
+              <td><%=obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['games-behind'][0]['$'].division %></td>
+               <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].points_for%></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['$'].points_against%></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['conference'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['conference'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['division'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['division'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['home'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['home'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['road'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['road'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['last_10'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['records'][0]['last_10'][0]['$'].losses %></td>
+                <% if(obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['streak'][0]['loss'] != undefined) { %>
+                  <td>L<%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['streak'][0]['loss'][0]['$'].length %></td>
+                <% } else { %>
+                  <td>W<%= obj['league']['season'][0]['conference'][0]['division'][1]['team'][i]['streak'][0]['win'][0]['$'].length %></td>
+                <% } %>
+            <% } %>
+            </tr>
+          </table>
+          <h3><%= obj['league']['season'][0]['conference'][0]['division'][2]['$'].name %></h3>
+          <table class='table table-striped table-hover table-bordered'>
+          <tr>
+            <td>Name</td>
+            <td>W</td>
+            <td>L</td>
+            <td>PCT</td>
+            <td>GB</td>
+             <td>PF</td>
+            <td>PA</td>
+            <td>CONF</td>
+            <td>DIV</td>
+            <td>HOME</td>
+            <td>ROAD</td>
+            <td>L10&nbsp&nbsp&nbsp&nbsp</td>
+            <td>STRK</td>
+          <% for (var i = 0; i<obj['league']['season'][0]['conference'][0]['division'][2]['team'].length; i++) { %>
+            <tr>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].market %> <%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].name %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].wins %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].win_pct%></td>
+              <td><%=obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['games-behind'][0]['$'].division %></td>
+               <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].points_for%></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['$'].points_against%></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['conference'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['conference'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['division'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['division'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['home'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['home'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['road'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['road'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['last_10'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['records'][0]['last_10'][0]['$'].losses %></td>
+                <% if(obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['streak'][0]['loss'] != undefined) { %>
+                  <td>L<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['streak'][0]['loss'][0]['$'].length %></td>
+                <% } else { %>
+                  <td>W<%= obj['league']['season'][0]['conference'][0]['division'][2]['team'][i]['streak'][0]['win'][0]['$'].length %></td>
+                <% } %>
+            <% } %>
+            </tr>
+          </table>
+   		 </div>
+    	</div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2><%= obj['league']['season'][0]['conference'][1]['$'].name %></h2>
+          <h3><%= obj['league']['season'][0]['conference'][1]['division'][0]['$'].name %></h3>
+          <table class='table table-striped table-hover table-bordered'>
+          <tr>
+            <td>Name</td>
+            <td>W</td>
+            <td>L</td>
+            <td>PCT</td>
+            <td>GB</td>
+             <td>PF</td>
+            <td>PA</td>
+            <td>CONF</td>
+            <td>DIV</td>
+            <td>HOME</td>
+            <td>ROAD</td>
+            <td>L10&nbsp&nbsp&nbsp&nbsp</td>
+            <td>STRK</td>
+          <% for (var i = 0; i<obj['league']['season'][0]['conference'][1]['division'][0]['team'].length; i++) { %>
+            <tr>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].market %> <%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].name %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].wins %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].win_pct%></td>
+              <td><%=obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['games-behind'][0]['$'].division %></td>
+               <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].points_for%></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['$'].points_against%></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['conference'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['conference'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['division'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['division'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['home'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['home'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['road'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['road'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['records'][0]['last_10'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][0]['division'][0]['team'][i]['records'][0]['last_10'][0]['$'].losses %></td>
+                <% if(obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['streak'][0]['loss'] != undefined) { %>
+                  <td>L<%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['streak'][0]['loss'][0]['$'].length %></td>
+                <% } else { %>
+                  <td>W<%= obj['league']['season'][0]['conference'][1]['division'][0]['team'][i]['streak'][0]['win'][0]['$'].length %></td>
+                <% } %>
+            <% } %>
+            </tr>
+          </table>
+          <h3><%= obj['league']['season'][0]['conference'][1]['division'][1]['$'].name %></h3>
+          <table class='table table-striped table-hover table-bordered'>
+          <tr>
+            <td>Name</td>
+            <td>W</td>
+            <td>L</td>
+            <td>PCT</td>
+            <td>GB</td>
+            <td>PF</td>
+            <td>PA</td>
+            <td>CONF</td>
+            <td>DIV</td>
+            <td>HOME</td>
+            <td>ROAD</td>
+            <td>L10&nbsp&nbsp&nbsp&nbsp</td>
+            <td>STRK</td>
+          <% for (var i = 0; i<obj['league']['season'][0]['conference'][1]['division'][1]['team'].length; i++) { %>
+            <tr>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].market %> <%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].name %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].wins %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].win_pct%></td>
+              <td><%=obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['games-behind'][0]['$'].division %></td>
+               <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].points_for%></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['$'].points_against%></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['conference'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['conference'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['division'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['division'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['home'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['home'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['road'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['road'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['last_10'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['records'][0]['last_10'][0]['$'].losses %></td>
+                <% if(obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['streak'][0]['loss'] != undefined) { %>
+                  <td>L<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['streak'][0]['loss'][0]['$'].length %></td>
+                <% } else { %>
+                  <td>W<%= obj['league']['season'][0]['conference'][1]['division'][1]['team'][i]['streak'][0]['win'][0]['$'].length %></td>
+                <% } %>
+            <% } %>
+            </tr>
+          </table>
+           <h3><%= obj['league']['season'][0]['conference'][1]['division'][2]['$'].name %></h3>
+          <table class='table table-striped table-hover table-bordered'>
+          <tr>
+            <td>Name</td>
+            <td>W</td>
+            <td>L</td>
+            <td>PCT</td>
+            <td>GB</td>
+            <td>PF</td>
+            <td>PA</td>
+            <td>CONF</td>
+            <td>DIV</td>
+            <td>HOME</td>
+            <td>ROAD</td>
+            <td>L10&nbsp&nbsp&nbsp&nbsp</td>
+            <td>STRK</td>
+          <% for (var i = 0; i<obj['league']['season'][0]['conference'][1]['division'][2]['team'].length; i++) { %>
+            <tr>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].market %> <%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].name %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].wins %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].win_pct%></td>
+              <td><%=obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['games-behind'][0]['$'].division %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].points_for%></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['$'].points_against%></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['conference'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['conference'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['division'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['division'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['home'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['home'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['road'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['road'][0]['$'].losses %></td>
+              <td><%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['last_10'][0]['$'].wins %>-<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['records'][0]['last_10'][0]['$'].losses %></td>
+                <% if(obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['streak'][0]['loss'] != undefined) { %>
+                  <td>L<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['streak'][0]['loss'][0]['$'].length %></td>
+                <% } else { %>
+                  <td>W<%= obj['league']['season'][0]['conference'][1]['division'][2]['team'][i]['streak'][0]['win'][0]['$'].length %></td>
+                <% } %>
+            <% } %>
+            </tr>
+          </table>
+
+       </div>
+      </div>
+    	<hr>
+
+    </div>
+    <footer>
+        <p>&copy; Peter Podniesinski 2014</p>
+    </footer>
+
+	</body>
+</html>

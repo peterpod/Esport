@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+		<script src="../../../../js/bootstrap.js"></script>
+		<script src="js/underscore.js"></script>
+		<link rel="stylesheet" type="text/css" href="../../../css/app.css">
+		<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../../../../home">Esport</a>
+        </div>
+       <div id="navbar" class="navbar-collapse collapse">
+          <div class="navbar-form navbar-right">
+            <a class="btn btn-success" href='../../../signup'>Sign Up</a>
+            <a class="btn btn-success" href='../../../users'>Users</a>
+          </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <div class="container">
+		<h1><%= sport %> <%= obj['game']['team'][0]['$'].market %> <%= obj['game']['team'][0]['$'].name %> Versus <%= obj['game']['team'][1]['$'].market %> <%= obj['game']['team'][1]['$'].name %> Game Statistics</h1>
+    <h3>Status: <%= obj['game']['$'].status %></h3>
+	  </div>
+	</div>
+
+	<div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-5">
+          <h2><%= obj['game']['team'][0]['$'].market %> <%= obj['game']['team'][0]['$'].name %> </h2>
+          <h3>Score: <%= obj['game']['team'][0]['$'].points %></h3>
+          <h4>Defense</h4>
+              Ast: <%=obj['game']['team'][0]['defense'][0]['$'].ast %><br>
+              Bk: <%=obj['game']['team'][0]['defense'][0]['$'].bk %><br>
+              Comb: <%=obj['game']['team'][0]['defense'][0]['$'].comb %><br>
+              Forced Fumbles: <%=obj['game']['team'][0]['defense'][0]['$'].force_fum %><br>
+              Interceptions: <%=obj['game']['team'][0]['defense'][0]['$'].int %><br>
+              Sack: <%=obj['game']['team'][0]['defense'][0]['$'].sack %><br>
+              Sack Yards: <%=obj['game']['team'][0]['defense'][0]['$'].sack_yds %><br>
+              Safety: <%=obj['game']['team'][0]['defense'][0]['$'].sfty %><br>
+              Tackles: <%=obj['game']['team'][0]['defense'][0]['$'].tackle %><br>
+          <h4>First Downs</h4>
+              Number: <%=obj['game']['team'][0]['first_downs'][0]['$'].num %><br>
+              Passing: <%=obj['game']['team'][0]['first_downs'][0]['$'].pass %><br>
+              Rushing: <%=obj['game']['team'][0]['first_downs'][0]['$'].rush %><br>
+          <h4>Fourth Down</h4>
+              Attempted: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].att %><br>
+              Converted: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].conv %><br>
+              Efficiency: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].pct %><br>
+          <h4>Passing</h4>
+              Attempted: <%=obj['game']['team'][0]['passing'][0]['$'].att %><br>
+              Completed: <%=obj['game']['team'][0]['passing'][0]['$'].cmp %><br>
+              Average: <%=obj['game']['team'][0]['passing'][0]['$'].avg %><br>
+              Interceptions: <%=obj['game']['team'][0]['passing'][0]['$'].int %><br>
+              Sacks: <%=obj['game']['team'][0]['passing'][0]['$'].sk %><br>
+              Yards: <%=obj['game']['team'][0]['passing'][0]['$'].yds %><br>
+          <h4>Rushing</h4>
+              Attempts: <%=obj['game']['team'][0]['rushing'][0]['$'].att %><br>
+              Average: <%=obj['game']['team'][0]['rushing'][0]['$'].avg %><br>
+              First Downs: <%=obj['game']['team'][0]['rushing'][0]['$'].fd %><br>
+              First Downs Percentage: <%=obj['game']['team'][0]['rushing'][0]['$'].fd_pct %><br>
+              Yards: <%=obj['game']['team'][0]['rushing'][0]['$'].yds %><br>
+          </div>
+        <div class="col-md-5">
+          <h2><%= obj['game']['team'][1]['$'].market %> <%= obj['game']['team'][0]['$'].name %> </h2>
+          <h3>Score: <%= obj['game']['team'][1]['$'].points %></h3>
+          <h4>Defense</h4>
+              Ast: <%=obj['game']['team'][1]['defense'][0]['$'].ast %><br>
+              Bk: <%=obj['game']['team'][1]['defense'][0]['$'].bk %><br>
+              Comb: <%=obj['game']['team'][1]['defense'][0]['$'].comb %><br>
+              Forced Fumbles: <%=obj['game']['team'][1]['defense'][0]['$'].force_fum %><br>
+              Interceptions: <%=obj['game']['team'][1]['defense'][0]['$'].int %><br>
+              Sack: <%=obj['game']['team'][1]['defense'][0]['$'].sack %><br>
+              Sack Yards: <%=obj['game']['team'][1]['defense'][0]['$'].sack_yds %><br>
+              Safety: <%=obj['game']['team'][1]['defense'][0]['$'].sfty %><br>
+              Tackles: <%=obj['game']['team'][1]['defense'][0]['$'].tackle %><br>
+          <h4>First Downs</h4>
+              Number: <%=obj['game']['team'][1]['first_downs'][0]['$'].num %><br>
+              Passing: <%=obj['game']['team'][1]['first_downs'][0]['$'].pass %><br>
+              Rushing: <%=obj['game']['team'][1]['first_downs'][0]['$'].rush %><br>
+          <h4>Fourth Down</h4>
+              Attempted: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].att %><br>
+              Converted: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].conv %><br>
+              Efficiency: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].pct %><br>
+          <h4>Passing</h4>
+              Attempted: <%=obj['game']['team'][1]['passing'][0]['$'].att %><br>
+              Completed: <%=obj['game']['team'][1]['passing'][0]['$'].cmp %><br>
+              Average: <%=obj['game']['team'][1]['passing'][0]['$'].avg %><br>
+              Interceptions: <%=obj['game']['team'][1]['passing'][0]['$'].int %><br>
+              Sacks: <%=obj['game']['team'][1]['passing'][0]['$'].sk %><br>
+              Yards: <%=obj['game']['team'][1]['passing'][0]['$'].yds %><br>
+          <h4>Rushing</h4>
+              Attempts: <%=obj['game']['team'][1]['rushing'][0]['$'].att %><br>
+              Average: <%=obj['game']['team'][1]['rushing'][0]['$'].avg %><br>
+              First Downs: <%=obj['game']['team'][1]['rushing'][0]['$'].fd %><br>
+              First Downs Percentage: <%=obj['game']['team'][1]['rushing'][0]['$'].fd_pct %><br>
+              Yards: <%=obj['game']['team'][1]['rushing'][0]['$'].yds %><br>
+          </div>
+    </div>
+    <div class="row">
+            <div class="col-md-9">
+              <h2><%= obj['game']['team'][0]['$'].name %> Team Statistics</h2>
+              <h3>Quarterback</h3>
+               <table class='table table-striped table-hover table-bordered'>
+                     <tr>
+                        <td>Name</td>
+                        <td >pos</td>
+                        <td >att</td>
+                        <td >avg</td>
+                        <td >cmp</td>
+                        <td >cmp_pct</td>
+                        <td>fd</td>
+                        <td >int</td>
+                        <td >td</td>
+                        <td >sack</td>
+                        <td >yds</td>
+                     </tr>
+                        <tr>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].name%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].position%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].att%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].avg%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].cmp%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].cmp_pct%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].fd%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].int%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].td%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].sk%> </td>
+                           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].yds%> </td>
+                        </tr>
+                  </table>
+               <h3>Defensive Line</h3>
+               <table class='table table-striped table-hover table-bordered'>
+                     <tr>
+                        <td>Name</td>
+                        <td >pos</td>
+                        <td >ast</td>
+                        <td >bk</td>
+                        <td >comb</td>
+                        <td >force_fum</td>
+                        <td >int</td>
+                        <td >sack</td>
+                        <td >safety</td>
+                        <td >tackles</td>
+                     </tr>
+                     <% for (var i = 0; i<obj['game']['team'][0]['defense'][0]['player'].length; i++) { %>
+                        <tr>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].name%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].position%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].ast%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].bk%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].comb%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].force_fum%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].int%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].sack%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].sfty%> </td>
+                           <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].tackle%> </td>
+                        </tr>
+                     <% } %>
+                  </table>
+                  <h3>Offensive Line</h3>
+               <table class='table table-striped table-hover table-bordered'>
+                     <tr>
+                        <td>Name</td>
+                        <td >pos</td>
+                        <td >att</td>
+                        <td >avg</td>
+                        <td >fd</td>
+                        <td >fd_pct</td>
+                        <td >fum</td>
+                        <td >td</td>
+                        <td >sfty</td>
+                        <td >yds</td>
+                     </tr>
+                     <% for (var i = 0; i<obj['game']['team'][0]['rushing'][0]['player'].length; i++) { %>
+                        <tr>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].name%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].position%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].att%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].avg%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fd%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fd_pct%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fum%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].td%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].sfty%> </td>
+                           <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].yds%> </td>
+                        </tr>
+                     <% } %>
+                  </table>
+            </div>
+    </div>
+        <div class="row">
+            <div class="col-md-9">
+              <h2><%= obj['game']['team'][1]['$'].name %> Team Statistics</h2>
+              <h3>Quarterback</h3>
+               <table class='table table-striped table-hover table-bordered'>
+                     <tr>
+                        <td>Name</td>
+                        <td >pos</td>
+                        <td >att</td>
+                        <td >avg</td>
+                        <td >cmp</td>
+                        <td >cmp_pct</td>
+                        <td>fd</td>
+                        <td >int</td>
+                        <td >td</td>
+                        <td >sack</td>
+                        <td >yds</td>
+                     </tr>
+                        <tr>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].name%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].position%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].att%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].avg%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].cmp%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].cmp_pct%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].fd%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].int%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].td%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].sk%> </td>
+                           <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].yds%> </td>
+                        </tr>
+                  </table>
+               <h3>Defensive Line</h3>
+               <table class='table table-striped table-hover table-bordered'>
+                     <tr>
+                        <td>Name</td>
+                        <td >pos</td>
+                        <td >ast</td>
+                        <td >bk</td>
+                        <td >comb</td>
+                        <td >force_fum</td>
+                        <td >int</td>
+                        <td >sack</td>
+                        <td >safety</td>
+                        <td >tackles</td>
+                     </tr>
+                     <% for (var i = 0; i<obj['game']['team'][1]['defense'][0]['player'].length; i++) { %>
+                        <tr>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].name%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].position%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].ast%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].bk%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].comb%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].force_fum%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].int%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].sack%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].sfty%> </td>
+                           <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].tackle%> </td>
+                        </tr>
+                     <% } %>
+                  </table>
+                  <h3>Offensive Line</h3>
+               <table class='table table-striped table-hover table-bordered'>
+                     <tr>
+                        <td>Name</td>
+                        <td >pos</td>
+                        <td >att</td>
+                        <td >avg</td>
+                        <td >fd</td>
+                        <td >fd_pct</td>
+                        <td >fum</td>
+                        <td >td</td>
+                        <td >sfty</td>
+                        <td >yds</td>
+                     </tr>
+                     <% for (var i = 0; i<obj['game']['team'][1]['rushing'][0]['player'].length; i++) { %>
+                        <tr>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].name%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].position%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].att%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].avg%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fd%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fd_pct%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fum%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].td%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].sfty%> </td>
+                           <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].yds%> </td>
+                        </tr>
+                     <% } %>
+                  </table>
+            </div>
+    </div>
+    <hr>
+    <footer>
+        <p>&copy; Peter Podniesinski 2014</p>
+      </footer>
+    </div>
+
+	</body>
+</html>
