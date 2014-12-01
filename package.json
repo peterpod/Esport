@@ -1,10 +1,10 @@
 {
-  "name": "M2C-SimpleStaticServer",
+  "name": "Esport",
   "version": "1.0.0",
-  "description": "M2C Simple Static Server",
+  "description": "Sporting Statistical Application",
   "author": {
-    "name": "Joe mertz",
-    "email": "JoeMertz@cmu.edu",
+    "name": "Peter Podniesinski",
+    "email": "peterpod@hotmail.com",
     "url": "http://www.andrew.cmu.edu/course/67-328"
   },
   "repository": {

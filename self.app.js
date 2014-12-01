@@ -1,4 +1,4 @@
-self.app.set('trust proxy', 1) // trust first proxy
+  self.app.set('trust proxy', 1) // trust first proxy
 
   self.app.use(session({
     secret: '1234567890QWERTY',
