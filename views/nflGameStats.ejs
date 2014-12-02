@@ -116,184 +116,196 @@
       <div class="col-md-9">
         <h2><%= obj['game']['team'][0]['$'].name %> Team Statistics</h2>
         <h3>Quarterback</h3>
-        <table class='table table-striped table-hover table-bordered'>
+        <div class='table-responsive'>
+          <table class='table table-striped table-hover table-bordered'>
+           <tr>
+            <td>Name</td>
+            <td >pos</td>
+            <td >att</td>
+            <td >avg</td>
+            <td >cmp</td>
+            <td >cmp_pct</td>
+            <td>fd</td>
+            <td >int</td>
+            <td >td</td>
+            <td >sack</td>
+            <td >yds</td>
+          </tr>
+          <tr>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].name%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].position%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].att%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].avg%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].cmp%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].cmp_pct%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].fd%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].int%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].td%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].sk%> </td>
+           <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].yds%> </td>
+         </tr>
+       </table>
+     </div>
+     <h3>Defensive Line</h3>
+     <div class='table-responsive'>
+       <table class='table table-striped table-hover table-bordered'>
          <tr>
           <td>Name</td>
           <td >pos</td>
-          <td >att</td>
-          <td >avg</td>
-          <td >cmp</td>
-          <td >cmp_pct</td>
-          <td>fd</td>
+          <td >ast</td>
+          <td >bk</td>
+          <td >comb</td>
+          <td >force_fum</td>
           <td >int</td>
-          <td >td</td>
           <td >sack</td>
-          <td >yds</td>
+          <td >safety</td>
+          <td >tackles</td>
         </tr>
+        <% for (var i = 0; i<obj['game']['team'][0]['defense'][0]['player'].length; i++) { %>
         <tr>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].name%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].position%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].att%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].avg%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].cmp%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].cmp_pct%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].fd%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].int%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].td%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].sk%> </td>
-         <td><%=obj['game']['team'][0]['passing'][0]['player'][0]['$'].yds%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].name%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].position%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].ast%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].bk%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].comb%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].force_fum%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].int%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].sack%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].sfty%> </td>
+         <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].tackle%> </td>
        </tr>
+       <% } %>
      </table>
-     <h3>Defensive Line</h3>
+   </div>
+   <h3>Offensive Line</h3>
+   <div class='table-responsive'>
      <table class='table table-striped table-hover table-bordered'>
        <tr>
         <td>Name</td>
         <td >pos</td>
-        <td >ast</td>
-        <td >bk</td>
-        <td >comb</td>
-        <td >force_fum</td>
-        <td >int</td>
-        <td >sack</td>
-        <td >safety</td>
-        <td >tackles</td>
+        <td >att</td>
+        <td >avg</td>
+        <td >fd</td>
+        <td >fd_pct</td>
+        <td >fum</td>
+        <td >td</td>
+        <td >sfty</td>
+        <td >yds</td>
       </tr>
-      <% for (var i = 0; i<obj['game']['team'][0]['defense'][0]['player'].length; i++) { %>
+      <% for (var i = 0; i<obj['game']['team'][0]['rushing'][0]['player'].length; i++) { %>
       <tr>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].name%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].position%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].ast%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].bk%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].comb%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].force_fum%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].int%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].sack%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].sfty%> </td>
-       <td><%=obj['game']['team'][0]['defense'][0]['player'][i]['$'].tackle%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].name%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].position%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].att%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].avg%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fd%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fd_pct%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fum%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].td%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].sfty%> </td>
+       <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].yds%> </td>
      </tr>
      <% } %>
    </table>
-   <h3>Offensive Line</h3>
-   <table class='table table-striped table-hover table-bordered'>
-     <tr>
-      <td>Name</td>
-      <td >pos</td>
-      <td >att</td>
-      <td >avg</td>
-      <td >fd</td>
-      <td >fd_pct</td>
-      <td >fum</td>
-      <td >td</td>
-      <td >sfty</td>
-      <td >yds</td>
-    </tr>
-    <% for (var i = 0; i<obj['game']['team'][0]['rushing'][0]['player'].length; i++) { %>
-    <tr>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].name%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].position%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].att%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].avg%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fd%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fd_pct%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].fum%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].td%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].sfty%> </td>
-     <td><%=obj['game']['team'][0]['rushing'][0]['player'][i]['$'].yds%> </td>
-   </tr>
-   <% } %>
- </table>
+ </div>
 </div>
 </div>
 <div class="row">
   <div class="col-md-9">
     <h2><%= obj['game']['team'][1]['$'].name %> Team Statistics</h2>
     <h3>Quarterback</h3>
-    <table class='table table-striped table-hover table-bordered'>
+    <div class='table-responsive'>
+      <table class='table table-striped table-hover table-bordered'>
+       <tr>
+        <td>Name</td>
+        <td >pos</td>
+        <td >att</td>
+        <td >avg</td>
+        <td >cmp</td>
+        <td >cmp_pct</td>
+        <td>fd</td>
+        <td >int</td>
+        <td >td</td>
+        <td >sack</td>
+        <td >yds</td>
+      </tr>
+      <tr>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].name%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].position%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].att%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].avg%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].cmp%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].cmp_pct%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].fd%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].int%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].td%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].sk%> </td>
+       <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].yds%> </td>
+     </tr>
+   </table>
+ </div>
+ <h3>Defensive Line</h3>
+ <div class='table-responsive'>
+   <table class='table table-striped table-hover table-bordered'>
      <tr>
       <td>Name</td>
       <td >pos</td>
-      <td >att</td>
-      <td >avg</td>
-      <td >cmp</td>
-      <td >cmp_pct</td>
-      <td>fd</td>
+      <td >ast</td>
+      <td >bk</td>
+      <td >comb</td>
+      <td >force_fum</td>
       <td >int</td>
-      <td >td</td>
       <td >sack</td>
-      <td >yds</td>
+      <td >safety</td>
+      <td >tackles</td>
     </tr>
+    <% for (var i = 0; i<obj['game']['team'][1]['defense'][0]['player'].length; i++) { %>
     <tr>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].name%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].position%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].att%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].avg%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].cmp%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].cmp_pct%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].fd%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].int%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].td%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].sk%> </td>
-     <td><%=obj['game']['team'][1]['passing'][0]['player'][0]['$'].yds%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].name%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].position%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].ast%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].bk%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].comb%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].force_fum%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].int%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].sack%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].sfty%> </td>
+     <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].tackle%> </td>
    </tr>
+   <% } %>
  </table>
- <h3>Defensive Line</h3>
- <table class='table table-striped table-hover table-bordered'>
+</div>
+<h3>Offensive Line</h3>
+<div class='table-responsive'>
+  <table class='table table-striped table-hover table-bordered'>
    <tr>
     <td>Name</td>
     <td >pos</td>
-    <td >ast</td>
-    <td >bk</td>
-    <td >comb</td>
-    <td >force_fum</td>
-    <td >int</td>
-    <td >sack</td>
-    <td >safety</td>
-    <td >tackles</td>
+    <td >att</td>
+    <td >avg</td>
+    <td >fd</td>
+    <td >fd_pct</td>
+    <td >fum</td>
+    <td >td</td>
+    <td >sfty</td>
+    <td >yds</td>
   </tr>
-  <% for (var i = 0; i<obj['game']['team'][1]['defense'][0]['player'].length; i++) { %>
+  <% for (var i = 0; i<obj['game']['team'][1]['rushing'][0]['player'].length; i++) { %>
   <tr>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].name%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].position%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].ast%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].bk%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].comb%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].force_fum%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].int%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].sack%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].sfty%> </td>
-   <td><%=obj['game']['team'][1]['defense'][0]['player'][i]['$'].tackle%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].name%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].position%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].att%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].avg%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fd%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fd_pct%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fum%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].td%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].sfty%> </td>
+   <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].yds%> </td>
  </tr>
  <% } %>
 </table>
-<h3>Offensive Line</h3>
-<table class='table table-striped table-hover table-bordered'>
- <tr>
-  <td>Name</td>
-  <td >pos</td>
-  <td >att</td>
-  <td >avg</td>
-  <td >fd</td>
-  <td >fd_pct</td>
-  <td >fum</td>
-  <td >td</td>
-  <td >sfty</td>
-  <td >yds</td>
-</tr>
-<% for (var i = 0; i<obj['game']['team'][1]['rushing'][0]['player'].length; i++) { %>
-<tr>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].name%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].position%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].att%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].avg%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fd%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fd_pct%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].fum%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].td%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].sfty%> </td>
- <td><%=obj['game']['team'][1]['rushing'][0]['player'][i]['$'].yds%> </td>
-</tr>
-<% } %>
-</table>
+</div>
 </div>
 </div>
 <hr>
