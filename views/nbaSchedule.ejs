@@ -33,7 +33,7 @@
     <div class="jumbotron">
       <div class="container">
 		<h1><%= sport %> 2014 Daily Schedule</h1>
-		<% if(obj = ["\n    "]) { %>
+		<% if(obj == ["\n    "]) { %>
 			<p>Number of Games Today: 0</p>
 		<% } else { %>
 			<p>Number of Games Today: <%= obj.length%></p>
@@ -46,7 +46,7 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-6">
-        <% if(obj = ["\n    "]) { %>
+        <% if(obj == ["\n    "]) { %>
 			<p></p>
 		<% } else { %>
 			<% for (var i = 0; i<obj.length; i++) { %>
