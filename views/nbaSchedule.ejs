@@ -1,80 +1,81 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/underscore.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/app.css">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="css/bootstrap-responsive.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/underscore.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="home">Esport</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <div class="navbar-form navbar-right">
-            <a class="btn btn-success" href='../../signup'>Sign Up</a>
-            <a class="btn btn-success" href='../../users'>Users</a>
-          </div>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-    <div class="jumbotron">
-      <div class="container">
-		<h1><%= sport %> 2014 Daily Schedule</h1>
-		<% if(obj == ["\n    "]) { %>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="home">Esport</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<div class="navbar-form navbar-right">
+					<a class="btn btn-success" href='../../signup'>Sign Up</a>
+					<a class="btn btn-success" href='../../users'>Users</a>
+				</div>
+			</div><!--/.navbar-collapse -->
+		</div>
+	</nav>
+	<div class="jumbotron">
+		<div class="container">
+			<h1><%= sport %> 2014 Daily Schedule</h1>
+			<% if(obj == ["\n    "]) { %>
 			<p>Number of Games Today: 0</p>
-		<% } else { %>
+			<% } else { %>
 			<p>Number of Games Today: <%= obj.length%></p>
-		<% } %>
-    <a class="btn btn-default" href= 'nba/standings' role="button">NBA Standings</a><br>
-	  </div>
+			<% } %>
+			<a class="btn btn-default" href= 'nba/standings' role="button">NBA Standings</a><br>
+		</div>
 	</div>
 
 	<div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-6">
-        <% if(obj == ["\n    "]) { %>
-			<p></p>
-		<% } else { %>
-			<% for (var i = 0; i<obj.length; i++) { %>
+		<!-- Example row of columns -->
+		<div class="row">
+			<div class="col-md-6">
+				<% if(obj == ["\n    "]) { %>
+				<p></p>
+				<% } else { %>
+				<% for (var i = 0; i<obj.length; i++) { %>
 				<% var date = new Date(obj[i]['$'].scheduled)  %>
 				<% var now = new Date()  %>
-		    	<h2><%= obj[i]['home'][0]['$'].name %> Vs <%= obj[i]['away'][0]['$'].name %></h2>
-		    	Game Date: <%= date %></br>
-		    	Status: <%= obj[i]['$'].status %></br>
-		    	Coverage: <%= obj[i]['$'].coverage %></br>
-		    	Venue: <%= obj[i]['venue'][0]['$'].name %></br>
-		    	Capacity: <%= obj[i]['venue'][0]['$'].capacity %></br>
-		    	<% if (now > date) { %>
-		    		<a class="btn btn-default" href= 'nba/boxscore/<%= obj[i]['$']['id']%>'>Box Score </a><a class="btn btn-default" href= 'nba/statistics/<%= obj[i]['$'].id%>'>Statistics</a><br>
-		    	<% } %>
-		    	
-		    	<% if (i<obj.length-1) { %>
-		    		<hr>
-		    	<% } %>
-	    <% } %> 
-	   	<% } %>
-   		 </div>
-    	</div>
-    	<hr>
+				<h2><%= obj[i]['home'][0]['$'].name %> Vs <%= obj[i]['away'][0]['$'].name %></h2>
+				Game Date: <%= date %></br>
+				Status: <%= obj[i]['$'].status %></br>
+				Coverage: <%= obj[i]['$'].coverage %></br>
+				Venue: <%= obj[i]['venue'][0]['$'].name %></br>
+				Capacity: <%= obj[i]['venue'][0]['$'].capacity %></br>
+				<% if (now > date) { %>
+				<a class="btn btn-default" href= 'nba/boxscore/<%= obj[i]['$']['id']%>'>Box Score </a><a class="btn btn-default" href= 'nba/statistics/<%= obj[i]['$'].id%>'>Statistics</a><br>
+				<% } %>
+				
+				<% if (i<obj.length-1) { %>
+				<hr>
+				<% } %>
+				<% } %> 
+				<% } %>
+			</div>
+		</div>
+		<hr>
 
-      <footer>
-        <p>&copy; Peter Podniesinski 2014</p>
-      </footer>
-    </div>
+		<footer>
+			<p>&copy; Peter Podniesinski 2014</p>
+		</footer>
+	</div>
 
-	</body>
+</body>
 </html>

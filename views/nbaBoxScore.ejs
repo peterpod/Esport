@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-		<script src="js/bootstrap.js"></script>
-		<script src="js/underscore.js"></script>
-		<link rel="stylesheet" type="text/css" href="../../css/app.css">
-		<link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="../../../css/bootstrap-responsive.css" rel="stylesheet">
+ <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+ <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+ <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+ <script src="js/bootstrap.js"></script>
+ <script src="js/underscore.js"></script>
+ <link rel="stylesheet" type="text/css" href="../../css/app.css">
+ <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../../../home">Esport</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <div class="navbar-form navbar-right">
-            <a class="btn btn-success" href='../../../signup'>Sign Up</a>
-            <a class="btn btn-success" href='../../../users'>Users</a>
-          </div>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-    <div class="jumbotron">
-      <div class="container">
-		<h1>NBA Box Score</h1>
+       <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+         <span class="sr-only">Toggle navigation</span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../../../home">Esport</a>
+   </div>
+   <div id="navbar" class="navbar-collapse collapse">
+     <div class="navbar-form navbar-right">
+      <a class="btn btn-success" href='../../../signup'>Sign Up</a>
+      <a class="btn btn-success" href='../../../users'>Users</a>
+   </div>
+</div><!--/.navbar-collapse -->
+</div>
+</nav>
+<div class="jumbotron">
+   <div class="container">
+    <h1>NBA Box Score</h1>
     <h2><%= obj['game']['team'][0]['$'].name %> Versus <%= obj['game']['team'][1]['$'].name %> </h2>
-	  </div>
-	</div>
+ </div>
+</div>
 
-	<div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-6">
-		            <div id="nbaGITmeQtr">
+<div class="container">
+   <!-- Example row of columns -->
+   <div class="row">
+    <div class="col-md-6">
+       <div id="nbaGITmeQtr">
          <h2>FINAL</h2>
          <table width="151" cellpadding="0" cellspacing="0">
             <tr>
@@ -90,175 +91,175 @@
          </table>
       </div>
 
-<table class='table table-striped table-hover table-bordered'>
-      <thead class="nbaGISuns">
+      <table class='table table-striped table-hover table-bordered'>
+         <thead class="nbaGISuns">
+            <tr>
+               <th colspan="17"><%= obj['game']['team'][0]['$'].name %></th>
+            </tr>
+         </thead>
          <tr>
-            <th colspan="17"><%= obj['game']['team'][0]['$'].name %></th>
+            <td class="nbaGITeamHdrStatsNoBord" colspan="1">&nbsp;</td>
+            <td>Name</td>
+            <td class="nbaGITeamHdrStats">pos</td>
+            <td class="nbaGITeamHdrStats">min</td>
+            <td class="nbaGITeamHdrStats">fgm-a</td>
+            <td class="nbaGITeamHdrStats">3pm-a</td>
+            <td class="nbaGITeamHdrStats">ftm-a</td>
+            <td class="nbaGITeamHdrStats">+/-</td>
+            <td class="nbaGITeamHdrStats">off</td>
+            <td class="nbaGITeamHdrStats">def</td>
+            <td class="nbaGITeamHdrStats">tot</td>
+            <td class="nbaGITeamHdrStats">ast</td>
+            <td class="nbaGITeamHdrStats">pf</td>
+            <td class="nbaGITeamHdrStats">st</td>
+            <td class="nbaGITeamHdrStats">to</td>
+            <td class="nbaGITeamHdrStats">bs</td>
+            <td class="nbaGITeamHdrStats">pts</td>
          </tr>
-      </thead>
-      <tr>
-         <td class="nbaGITeamHdrStatsNoBord" colspan="1">&nbsp;</td>
-         <td>Name</td>
-         <td class="nbaGITeamHdrStats">pos</td>
-         <td class="nbaGITeamHdrStats">min</td>
-         <td class="nbaGITeamHdrStats">fgm-a</td>
-         <td class="nbaGITeamHdrStats">3pm-a</td>
-         <td class="nbaGITeamHdrStats">ftm-a</td>
-         <td class="nbaGITeamHdrStats">+/-</td>
-         <td class="nbaGITeamHdrStats">off</td>
-         <td class="nbaGITeamHdrStats">def</td>
-         <td class="nbaGITeamHdrStats">tot</td>
-         <td class="nbaGITeamHdrStats">ast</td>
-         <td class="nbaGITeamHdrStats">pf</td>
-         <td class="nbaGITeamHdrStats">st</td>
-         <td class="nbaGITeamHdrStats">to</td>
-         <td class="nbaGITeamHdrStats">bs</td>
-         <td class="nbaGITeamHdrStats">pts</td>
-      </tr>
-      <tr class="odd">
-         <td>Points Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['$'].full_name%> </td>
-         <td class="nbaGIPosition"><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['$'].primary_position%> </td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].assists %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].steals %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].points %></td>
-      </tr>
-      <tr class="even">
-         <td>Rebound Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['$'].full_name%> </td>
-         <td class="nbaGIPosition"><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['$'].primary_position%> </td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].assists %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].steals %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].points %></td>
-      </tr>
-      <tr class="odd">
-         <td>Assist Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['$'].full_name%> </td>
-         <td class="nbaGIPosition"><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['$'].primary_position%> </td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].assists %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].steals %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
-         <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].points %></td>
-      </tr>
-   </table>
-   <table class='table table-striped table-hover table-bordered'>
-      <thead class="nbaGIPistons">
+         <tr class="odd">
+            <td>Points Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['$'].full_name%> </td>
+            <td class="nbaGIPosition"><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['$'].primary_position%> </td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].assists %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].steals %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].points %></td>
+         </tr>
+         <tr class="even">
+            <td>Rebound Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['$'].full_name%> </td>
+            <td class="nbaGIPosition"><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['$'].primary_position%> </td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].assists %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].steals %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].points %></td>
+         </tr>
+         <tr class="odd">
+            <td>Assist Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['$'].full_name%> </td>
+            <td class="nbaGIPosition"><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['$'].primary_position%> </td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].assists %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].steals %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
+            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].points %></td>
+         </tr>
+      </table>
+      <table class='table table-striped table-hover table-bordered'>
+         <thead class="nbaGIPistons">
+            <tr>
+               <th colspan="17"><%= obj['game']['team'][1]['$'].name %></th>
+            </tr>
+         </thead>
          <tr>
-            <th colspan="17"><%= obj['game']['team'][1]['$'].name %></th>
+            <td class="nbaGITeamHdrStatsNoBord" colspan="1">&nbsp;</td>
+            <td>Name</td>
+            <td class="nbaGITeamHdrStats">pos</td>
+            <td class="nbaGITeamHdrStats">min</td>
+            <td class="nbaGITeamHdrStats">fgm-a</td>
+            <td class="nbaGITeamHdrStats">3pm-a</td>
+            <td class="nbaGITeamHdrStats">ftm-a</td>
+            <td class="nbaGITeamHdrStats">+/-</td>
+            <td class="nbaGITeamHdrStats">off</td>
+            <td class="nbaGITeamHdrStats">def</td>
+            <td class="nbaGITeamHdrStats">tot</td>
+            <td class="nbaGITeamHdrStats">ast</td>
+            <td class="nbaGITeamHdrStats">pf</td>
+            <td class="nbaGITeamHdrStats">st</td>
+            <td class="nbaGITeamHdrStats">to</td>
+            <td class="nbaGITeamHdrStats">bs</td>
+            <td class="nbaGITeamHdrStats">pts</td>
          </tr>
-      </thead>
-      <tr>
-         <td class="nbaGITeamHdrStatsNoBord" colspan="1">&nbsp;</td>
-         <td>Name</td>
-         <td class="nbaGITeamHdrStats">pos</td>
-         <td class="nbaGITeamHdrStats">min</td>
-         <td class="nbaGITeamHdrStats">fgm-a</td>
-         <td class="nbaGITeamHdrStats">3pm-a</td>
-         <td class="nbaGITeamHdrStats">ftm-a</td>
-         <td class="nbaGITeamHdrStats">+/-</td>
-         <td class="nbaGITeamHdrStats">off</td>
-         <td class="nbaGITeamHdrStats">def</td>
-         <td class="nbaGITeamHdrStats">tot</td>
-         <td class="nbaGITeamHdrStats">ast</td>
-         <td class="nbaGITeamHdrStats">pf</td>
-         <td class="nbaGITeamHdrStats">st</td>
-         <td class="nbaGITeamHdrStats">to</td>
-         <td class="nbaGITeamHdrStats">bs</td>
-         <td class="nbaGITeamHdrStats">pts</td>
-      </tr>
-     <tr class="odd">
-         <td>Points Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['$'].full_name%> </td>
-         <td class="nbaGIPosition"><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['$'].primary_position%> </td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].assists %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].steals %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].points %></td>
-      </tr>
-      <tr class="even">
-         <td>Rebound Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['$'].full_name%> </td>
-         <td class="nbaGIPosition"><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['$'].primary_position%> </td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].assists %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].steals %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].points %></td>
-      </tr>
-      <tr class="odd">
-         <td>Assist Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['$'].full_name%> </td>
-         <td class="nbaGIPosition"><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['$'].primary_position%> </td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].assists %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].steals %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
-         <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].points %></td>
-      </tr>
-   </table>
+         <tr class="odd">
+            <td>Points Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['$'].full_name%> </td>
+            <td class="nbaGIPosition"><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['$'].primary_position%> </td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].assists %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].steals %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].points %></td>
+         </tr>
+         <tr class="even">
+            <td>Rebound Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['$'].full_name%> </td>
+            <td class="nbaGIPosition"><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['$'].primary_position%> </td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].assists %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].steals %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['rebounds'][0]['player'][0]['statistics'][0]['$'].points %></td>
+         </tr>
+         <tr class="odd">
+            <td>Assist Leader</td><td id="nbaGIBoxNme" class="b"><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['$'].full_name%> </td>
+            <td class="nbaGIPosition"><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['$'].primary_position%> </td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].minutes%> </td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_made %> - <%= obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].field_goals_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_made %> - <%= obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].three_points_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_made %> - <%= obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].free_throws_att %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].pls_min%></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].offensive_rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].defensive_rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].rebounds %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].assists %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].personal_fouls %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].steals %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].turnovers %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocks %></td>
+            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].points %></td>
+         </tr>
+      </table>
    </div>
-   		 </div>
-    	</div>
-    	<hr>
+</div>
+</div>
+<hr>
 
-      <footer>
-        <p>&copy; Peter Podniesinski 2014</p>
-      </footer>
-    </div>
+<footer>
+ <p>&copy; Peter Podniesinski 2014</p>
+</footer>
+</div>
 
-	</body>
+</body>
 </html>

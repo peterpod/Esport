@@ -3,76 +3,76 @@
 <head>
 	<title> Welcome to Esport </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-	<script src="js/bootstrap.js"></script>
-  <link href="css/bootstrap-responsive.css" rel="stylesheet">
-	<script src="js/underscore.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/app.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <script src="js/bootstrap.js"></script>
+  <script src="js/underscore.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Esport</a>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Esport</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-form navbar-right">
+          <a class="btn btn-success" href='signup'>Sign Up</a>
+          <a class="btn btn-success" href='users'>Users</a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <div class="navbar-form navbar-right">
-            <a class="btn btn-success" href='signup'>Sign Up</a>
-            <a class="btn btn-success" href='users'>Users</a>
-          </div>
-        </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome to Esport</h1>
-		<hr>
-		<p>Esport is a user-friendly sporting application built off of the Sports Data API.
-		   This application is built to serve as a gateway for sports hungry fans looking to stay
-		   tuned to the sports world! Esport provides fans with NBA, NFL and NHL sports coverage 
-		   through game schedules, scores and a variety of statistics to keep you engaged in 
-		   the game. We offer game time, fast updates and reliable service that competes with 
-		   even the biggest names. Look up your favorite sport today!
-		</p>
-      </div>
+      </div><!--/.navbar-collapse -->
     </div>
+  </nav>
 
-	<div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>NBA</h2>
-          <p>Tune in to our NBA home page where we have your daily schedule and all the lastest games, stats, play by play and more! </p>
-          <p><a class="btn btn-default" href="nba" role="button">View NBA &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>NFL</h2>
-          <p>Tune in to our NFL home page where we have your weekly schedule and all the lastest games, stats, play by play and more!  </p>
-          <p><a class="btn btn-default" href="nfl" role="button">View NFL &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>NHL</h2>
-          <p>Tune in to our NHL home page where we have your daily schedule and all the lastest games, stats, play by play and more! </p>
-          <p><a class="btn btn-default" href="nhl" role="button">View NHL &raquo;</a></p>
-        </div>
-      </div>
-
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to Esport</h1>
       <hr>
+      <p>Esport is a user-friendly sporting application built off of the Sports Data API.
+       This application is built to serve as a gateway for sports hungry fans looking to stay
+       tuned to the sports world! Esport provides fans with NBA, NFL and NHL sports coverage 
+       through game schedules, scores and a variety of statistics to keep you engaged in 
+       the game. We offer game time, fast updates and reliable service that competes with 
+       even the biggest names. Look up your favorite sport today!
+     </p>
+   </div>
+ </div>
 
-      <footer>
-        <p>&copy; Peter Podniesinski 2014</p>
-      </footer>
-    </div> <!-- /container -->
+ <div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-4">
+      <h2>NBA</h2>
+      <p>Tune in to our NBA home page where we have your daily schedule and all the lastest games, stats, play by play and more! </p>
+      <p><a class="btn btn-default" href="nba" role="button">View NBA &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>NFL</h2>
+      <p>Tune in to our NFL home page where we have your weekly schedule and all the lastest games, stats, play by play and more!  </p>
+      <p><a class="btn btn-default" href="nfl" role="button">View NFL &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+      <h2>NHL</h2>
+      <p>Tune in to our NHL home page where we have your daily schedule and all the lastest games, stats, play by play and more! </p>
+      <p><a class="btn btn-default" href="nhl" role="button">View NHL &raquo;</a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; Peter Podniesinski 2014</p>
+  </footer>
+</div> <!-- /container -->
 
 
     <!-- Bootstrap core JavaScript
@@ -83,4 +83,4 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
-</html>
+  </html>

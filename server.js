@@ -44,16 +44,16 @@ var SimpleStaticServer = function() {
   self.app.use('/', express.static(__dirname + '/public'));
 
   self.app.get('/', function(req, res) {
-      res.sendFile(__dirname + '/public/login.html');
+    res.sendFile(__dirname + '/public/login.html');
   });
 
   self.app.get('/home', function(req, res) {
     //-- testing to see if session cookie is generated res.send(req.session);
-      res.sendFile(__dirname + '/public/home.html');
+    res.sendFile(__dirname + '/public/home.html');
   });
 
   self.app.get('/signup', function(req, res) {
-      res.sendFile(__dirname + '/public/signup.html');
+    res.sendFile(__dirname + '/public/signup.html');
   });
 
   // -- User Mongo Routes
@@ -87,16 +87,16 @@ var SimpleStaticServer = function() {
      * (e.g. when you are testing the application on your laptop) then
      * use default values of localhost (127.0.0.1) and 33333 (arbitrary).
      */
-    self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-    self.port      = process.env.OPENSHIFT_NODEJS_PORT || 33333;
-    self.host      = process.env.OPENSHIFT_MONGODB_DB_HOST;
+     self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+     self.port      = process.env.OPENSHIFT_NODEJS_PORT || 33333;
+     self.host      = process.env.OPENSHIFT_MONGODB_DB_HOST;
 
-    console.log('host'+ self.host);
+     console.log('host'+ self.host);
 
     //  Start listening on the specific IP and PORT
     self.app.listen(self.port, self.ipaddress, function() {
       console.log('%s: Node server started on %s:%d ...',
-                        Date(Date.now() ), self.ipaddress, self.port);
+        Date(Date.now() ), self.ipaddress, self.port);
     });
   };
 }; 
@@ -105,6 +105,6 @@ var SimpleStaticServer = function() {
 /**
  *  main():  Main code.
  */
-var sss = new SimpleStaticServer();
-sss.start();
+ var sss = new SimpleStaticServer();
+ sss.start();
 

@@ -1,105 +1,106 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-		<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-		<script src="../../../../js/bootstrap.js"></script>
-		<script src="js/underscore.js"></script>
-		<link rel="stylesheet" type="text/css" href="../../../css/app.css">
-		<link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.css">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../../../css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+  <script src="../../../../js/bootstrap.js"></script>
+  <script src="js/underscore.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../../css/app.css">
+  <link rel="stylesheet" type="text/css" href="../../../../css/bootstrap.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="../../../../home">Esport</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <div class="navbar-form navbar-right">
-            <a class="btn btn-success" href='../../../signup'>Sign Up</a>
-            <a class="btn btn-success" href='../../../users'>Users</a>
-          </div>
-        </div><!--/.navbar-collapse -->
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../../home">Esport</a>
       </div>
-    </nav>
-    <div class="jumbotron">
-      <div class="container">
-		<h1><%= sport %> <%= obj['game']['team'][0]['$'].market %> <%= obj['game']['team'][0]['$'].name %> Versus <%= obj['game']['team'][1]['$'].market %> <%= obj['game']['team'][1]['$'].name %> Game Summary</h1>
-    <h3>Status: <%= obj['game']['$'].status %></h3>
-	  </div>
-	</div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <div class="navbar-form navbar-right">
+          <a class="btn btn-success" href='../../../signup'>Sign Up</a>
+          <a class="btn btn-success" href='../../../users'>Users</a>
+        </div>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <div class="container">
+      <h1><%= sport %> <%= obj['game']['team'][0]['$'].market %> <%= obj['game']['team'][0]['$'].name %> Versus <%= obj['game']['team'][1]['$'].market %> <%= obj['game']['team'][1]['$'].name %> Game Summary</h1>
+      <h3>Status: <%= obj['game']['$'].status %></h3>
+    </div>
+  </div>
 
-	<div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-6">
-          <h2><%= obj['game']['team'][0]['$'].market %> <%= obj['game']['team'][0]['$'].name %> </h2>
-          <h3>Score: <%= obj['game']['team'][0]['final_score'][0] %></h3>
-          <h4>Touch Downs: <%=obj['game']['team'][0]['touchdowns'][0]['$'].number %></h4>
-          <h4>First Downs</h4>
-              Total: <%=obj['game']['team'][0]['first_downs'][0]['$'].total %><br>
-              Passing: <%=obj['game']['team'][0]['first_downs'][0].passing[0] %><br>
-              Rushing: <%=obj['game']['team'][0]['first_downs'][0].rushing[0] %><br>
-          <h4>Third Down</h4>
-              Attempted: <%=obj['game']['team'][0]['third_down_efficiency'][0]['$'].att %><br>
-              Converted: <%=obj['game']['team'][0]['third_down_efficiency'][0]['$'].converted %><br>
-              Pct: <%=obj['game']['team'][0]['third_down_efficiency'][0]['$'].pct %><br>
-          <h4>Fourth Down</h4>
-              Attempted: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].att %><br>
-              Converted: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].converted %><br>
-              Pct: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].pct %><br>
-          <h4>Total Yards</h4>
-              Total: <%=obj['game']['team'][0]['total_yards'][0]['$'].yds %><br>
-              Plays: <%=obj['game']['team'][0]['total_yards'][0]['$'].plays %><br>
-              Average: <%=obj['game']['team'][0]['total_yards'][0]['$'].avg %><br>
-          <h4>Passing</h4>
-              Attempted: <%=obj['game']['team'][0]['passing'][0]['$'].att %><br>
-              Completed: <%=obj['game']['team'][0]['passing'][0]['$'].cmp %><br>
-              Average: <%=obj['game']['team'][0]['passing'][0]['$'].avg %><br>
-              Interceptions: <%=obj['game']['team'][0]['passing'][0]['$'].int %><br>
-              Sacks: <%=obj['game']['team'][0]['passing'][0]['$'].sack %><br>
-          </div>
-        <div class="col-md-6">
-          <h2><%= obj['game']['team'][1]['$'].market %> <%= obj['game']['team'][0]['$'].name %> </h2>
-          <h3>Score: <%= obj['game']['team'][1]['final_score'][0] %></h3>
-          <h4>Touch Downs: <%=obj['game']['team'][1]['touchdowns'][0]['$'].number %></h4>
-          <h4>First Downs</h4>
-              Total: <%=obj['game']['team'][1]['first_downs'][0]['$'].total %><br>
-              Passing: <%=obj['game']['team'][1]['first_downs'][0].passing[0] %><br>
-              Rushing: <%=obj['game']['team'][1]['first_downs'][0].rushing[0] %><br>
-          <h4>Third Down</h4>
-              Attempted: <%=obj['game']['team'][1]['third_down_efficiency'][0]['$'].att %><br>
-              Converted: <%=obj['game']['team'][1]['third_down_efficiency'][0]['$'].converted %><br>
-              Pct: <%=obj['game']['team'][1]['third_down_efficiency'][0]['$'].pct %><br>
-          <h4>Fourth Down</h4>
-              Attempted: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].att %><br>
-              Converted: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].converted %><br>
-              Pct: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].pct %><br>
-          <h4>Total Yards</h4>
-              Total: <%=obj['game']['team'][1]['total_yards'][0]['$'].yds %><br>
-              Plays: <%=obj['game']['team'][1]['total_yards'][0]['$'].plays %><br>
-              Average: <%=obj['game']['team'][1]['total_yards'][0]['$'].avg %><br>
-          <h4>Passing</h4>
-              Attempted: <%=obj['game']['team'][1]['passing'][0]['$'].att %><br>
-              Completed: <%=obj['game']['team'][1]['passing'][0]['$'].cmp %><br>
-              Average: <%=obj['game']['team'][1]['passing'][0]['$'].avg %><br>
-              Interceptions: <%=obj['game']['team'][1]['passing'][0]['$'].int %><br>
-              Sacks: <%=obj['game']['team'][1]['passing'][0]['$'].sack %><br>
-          </div>
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-6">
+        <h2><%= obj['game']['team'][0]['$'].market %> <%= obj['game']['team'][0]['$'].name %> </h2>
+        <h3>Score: <%= obj['game']['team'][0]['final_score'][0] %></h3>
+        <h4>Touch Downs: <%=obj['game']['team'][0]['touchdowns'][0]['$'].number %></h4>
+        <h4>First Downs</h4>
+        Total: <%=obj['game']['team'][0]['first_downs'][0]['$'].total %><br>
+        Passing: <%=obj['game']['team'][0]['first_downs'][0].passing[0] %><br>
+        Rushing: <%=obj['game']['team'][0]['first_downs'][0].rushing[0] %><br>
+        <h4>Third Down</h4>
+        Attempted: <%=obj['game']['team'][0]['third_down_efficiency'][0]['$'].att %><br>
+        Converted: <%=obj['game']['team'][0]['third_down_efficiency'][0]['$'].converted %><br>
+        Pct: <%=obj['game']['team'][0]['third_down_efficiency'][0]['$'].pct %><br>
+        <h4>Fourth Down</h4>
+        Attempted: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].att %><br>
+        Converted: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].converted %><br>
+        Pct: <%=obj['game']['team'][0]['fourth_down_efficiency'][0]['$'].pct %><br>
+        <h4>Total Yards</h4>
+        Total: <%=obj['game']['team'][0]['total_yards'][0]['$'].yds %><br>
+        Plays: <%=obj['game']['team'][0]['total_yards'][0]['$'].plays %><br>
+        Average: <%=obj['game']['team'][0]['total_yards'][0]['$'].avg %><br>
+        <h4>Passing</h4>
+        Attempted: <%=obj['game']['team'][0]['passing'][0]['$'].att %><br>
+        Completed: <%=obj['game']['team'][0]['passing'][0]['$'].cmp %><br>
+        Average: <%=obj['game']['team'][0]['passing'][0]['$'].avg %><br>
+        Interceptions: <%=obj['game']['team'][0]['passing'][0]['$'].int %><br>
+        Sacks: <%=obj['game']['team'][0]['passing'][0]['$'].sack %><br>
+      </div>
+      <div class="col-md-6">
+        <h2><%= obj['game']['team'][1]['$'].market %> <%= obj['game']['team'][0]['$'].name %> </h2>
+        <h3>Score: <%= obj['game']['team'][1]['final_score'][0] %></h3>
+        <h4>Touch Downs: <%=obj['game']['team'][1]['touchdowns'][0]['$'].number %></h4>
+        <h4>First Downs</h4>
+        Total: <%=obj['game']['team'][1]['first_downs'][0]['$'].total %><br>
+        Passing: <%=obj['game']['team'][1]['first_downs'][0].passing[0] %><br>
+        Rushing: <%=obj['game']['team'][1]['first_downs'][0].rushing[0] %><br>
+        <h4>Third Down</h4>
+        Attempted: <%=obj['game']['team'][1]['third_down_efficiency'][0]['$'].att %><br>
+        Converted: <%=obj['game']['team'][1]['third_down_efficiency'][0]['$'].converted %><br>
+        Pct: <%=obj['game']['team'][1]['third_down_efficiency'][0]['$'].pct %><br>
+        <h4>Fourth Down</h4>
+        Attempted: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].att %><br>
+        Converted: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].converted %><br>
+        Pct: <%=obj['game']['team'][1]['fourth_down_efficiency'][0]['$'].pct %><br>
+        <h4>Total Yards</h4>
+        Total: <%=obj['game']['team'][1]['total_yards'][0]['$'].yds %><br>
+        Plays: <%=obj['game']['team'][1]['total_yards'][0]['$'].plays %><br>
+        Average: <%=obj['game']['team'][1]['total_yards'][0]['$'].avg %><br>
+        <h4>Passing</h4>
+        Attempted: <%=obj['game']['team'][1]['passing'][0]['$'].att %><br>
+        Completed: <%=obj['game']['team'][1]['passing'][0]['$'].cmp %><br>
+        Average: <%=obj['game']['team'][1]['passing'][0]['$'].avg %><br>
+        Interceptions: <%=obj['game']['team'][1]['passing'][0]['$'].int %><br>
+        Sacks: <%=obj['game']['team'][1]['passing'][0]['$'].sack %><br>
+      </div>
     </div>
     <hr>
     <footer>
-        <p>&copy; Peter Podniesinski 2014</p>
-      </footer>
-    </div>
+      <p>&copy; Peter Podniesinski 2014</p>
+    </footer>
+  </div>
 
-	</body>
+</body>
 </html>

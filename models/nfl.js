@@ -15,17 +15,17 @@ exports.getWeeklySchedule = function(week, callback) {
 }
 
 exports.getGameStats = function(week, awayteam, hometeam, callback) {
-    sportsdata_nfl.getGameStats(week,awayteam, hometeam, function(error, stats) {
-	    if(!error) {
-	      callback(stats);
-	    }
-  });
+  sportsdata_nfl.getGameStats(week,awayteam, hometeam, function(error, stats) {
+   if(!error) {
+     callback(stats);
+   }
+ });
 }
 
 exports.getGameSummary = function(week, awayteam, hometeam, callback) {
-    sportsdata_nfl.getGameSummary(week,awayteam, hometeam, function(error, summary) {
-	    if(!error) {
-	      callback(summary);
-	    }
-  });
+  sportsdata_nfl.getGameSummary(week,awayteam, hometeam, function(error, summary) {
+   if(!error) {
+     callback(summary);
+   }
+ });
 }
