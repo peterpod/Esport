@@ -6,10 +6,10 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="../js/bootstrap.js"></script>
   <script src="js/underscore.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/app.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/app.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 </head>
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -21,7 +21,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="home">Esport</a>
+        <a class="navbar-brand" href="../home">Esport</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <div class="navbar-form navbar-right">
@@ -33,11 +33,9 @@
   </nav>
   <div class="jumbotron">
     <div class="container">
-      <h1><%= sport %> 2014 Daily Schedule</h1>
+      <h1><%= heading %> </h1>
       <p>Number of Games Today: <%= obj.length%></p>
-      <a class="btn btn-default" href= 'nhl/standings' role="button">NHL Standings</a>
-      <a class="btn btn-default" href= 'nhl/yesterday' role="button">Yesterday's Schedule</a>
-      <a class="btn btn-default" href= 'nhl/tomorrow' role="button">Tomorrow's Schedule</a>
+      <a class="btn btn-default" href= 'standings' role="button">NHL Standings</a>
     </div>
   </div>
 
@@ -54,7 +52,9 @@
         Coverage: <%= obj[i]['$'].coverage %></br>
         Venue: <%= obj[i]['venue'][0]['$'].name %></br>
         Capacity: <%= obj[i]['venue'][0]['$'].capacity %></br>
-        <a class="btn btn-default" href= 'nhl/boxscore/<%= obj[i]['$']['id']%>' role="button">Boxscore</a><br>
+        <% if (now > date) { %>
+        <a class="btn btn-default" href= 'boxscore/<%= obj[i]['$']['id']%>' role="button">Boxscore</a><br>
+        <% } %>
         <% if (i<obj.length-1) { %>
         <hr>
         <% } %>

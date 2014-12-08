@@ -46,7 +46,7 @@
         <% var date = new Date(obj[i]['$'].scheduled)  %>
         <% var now = new Date()  %>
         <h2><%= obj[i]['$'].home %> Vs <%= obj[i]['$'].away %></h2>
-        Game Date: <%= date %></br>
+        Game Date: <%= date.toDateString() %></br>
         Venue: <%= obj[i]['venue'][0]['$'].name %></br>
         Capacity: <%= obj[i]['venue'][0]['$'].capacity %></br>
         <% if (now > date) { %>

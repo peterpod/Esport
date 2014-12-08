@@ -61,10 +61,12 @@ var SimpleStaticServer = function() {
   self.app.get('/user/edit/:username/:password/:firstname/:lastname', dbRoutes.loadUserEdit);
   self.app.get('/users', dbRoutes.getUser);
   self.app.post('/:collection/:username/:password/:firstname/:lastname', dbRoutes.postUser);
-  self.app.delete('/:collection/:firstname/:lastname', dbRoutes.deleteUser);
+  self.app.delete('/:collection/:username', dbRoutes.deleteUser);
 
   // -- NBA Routes
   self.app.get('/nba', sportRoutes.loadNBAPage);
+  self.app.get('/nba/yesterday', sportRoutes.loadNBAYesterdayPage);
+  self.app.get('/nba/tomorrow', sportRoutes.loadNBATomorrowPage);
   self.app.get('/nba/boxscore/:gameID', sportRoutes.getBoxScore);
   self.app.get('/nba/statistics/:gameID', sportRoutes.getGameScoreAndStats);
   self.app.get('/nba/standings', sportRoutes.getNBAStandings);
@@ -76,6 +78,8 @@ var SimpleStaticServer = function() {
 
   // -- NHL Routes
   self.app.get('/nhl', sportRoutes.loadNHLPage);
+  self.app.get('/nhl/yesterday', sportRoutes.loadNHLYesterday);
+  self.app.get('/nhl/tomorrow', sportRoutes.loadNHLTomorrow);
   self.app.get('/nhl/boxscore/:gameID', sportRoutes.getNHLBoxScore);
   self.app.get('/nhl/standings', sportRoutes.getNHLStandings);
 

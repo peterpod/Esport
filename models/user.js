@@ -65,7 +65,7 @@ exports.update = function(collection, query, callback) {
 exports.delete = function(collection, query, callback) {
   console.log('im in user model delete');
   mongoDB.collection(collection).remove(
-    {firstname: query.firstname, lastname: query.lastname},
+    {username: query.username},
     function(err, crsr) {
       if (err) doError(err);
       callback('Delete succeeded');

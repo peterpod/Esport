@@ -11,7 +11,29 @@ exports.loadNBAPage = function(req, res) {
   var day = date.getDate();
   sportsdata_nba.getDailySchedule(year, month, day, function(schedule) {
   	console.log(JSON.stringify(schedule.league['daily-schedule'][0]['games']));
-  	return res.render('nbaSchedule', { title: 'NBA Home', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
+  	return res.render('nbaSchedule', { title: 'NBA Home', heading: 'Todays NBA Schedule', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
+  });
+}
+exports.loadNBAYesterdayPage = function(req, res) {
+  var date = new Date();
+  date.setDate(date.getDate()-1);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  var day = date.getDate();
+  sportsdata_nba.getDailySchedule(year, month, day, function(schedule) {
+    console.log(JSON.stringify(schedule.league['daily-schedule'][0]['games']));
+    return res.render('nbaScheduleYesterday', { title: 'NBA Home', heading: date.toDateString()+' NBA Schedule', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
+  });
+}
+exports.loadNBATomorrowPage = function(req, res) {
+  var date = new Date();
+  date.setDate(date.getDate()+1);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  var day = date.getDate();
+  sportsdata_nba.getDailySchedule(year, month, day, function(schedule) {
+    console.log(JSON.stringify(schedule.league['daily-schedule'][0]['games']));
+    return res.render('nbaScheduleTomorrow', { title: 'NBA Home', heading: date.toDateString()+' NBA Schedule', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
   });
 }
 
@@ -36,9 +58,39 @@ exports.getNBAStandings = function(req, res) {
   });
 }
 
+
+function getNFLWeek(date){
+  var nflSchedule = [
+    [1, '2014-09-04'],
+    [2, '2014-09-11'],
+    [3, '2014-09-18'],
+    [4, '2014-09-25'],
+    [5, '2014-10-02'],
+    [6, '2014-10-09'],
+    [7, '2014-10-16'],
+    [8, '2014-10-23'],
+    [9, '2014-10-30'],
+    [10,'2014-11-06'],
+    [11, '2014-11-13'],
+    [12, '2014-11-20'],
+    [13, '2014-11-27'],
+    [14, '2014-12-04'],
+    [15, '2014-12-11'],
+    [16, '2014-12-18'],
+    [17, '2014-12-25']
+];
+  var date = new Date();
+  for (var i = 0; i<nflSchedule.length; i++){
+      if(date < new Date(nflSchedule[i][1])){
+        return nflSchedule[i][0];
+      }
+  }
+}
 // -----NFL-----
 exports.loadNFLPage = function(req, res) {
-  sportsdata_nfl.getWeeklySchedule(12, function(schedule) {
+  var date = new Date();
+  var week = getNFLWeek(date);
+  sportsdata_nfl.getWeeklySchedule(week, function(schedule) {
   	console.log(JSON.stringify(schedule['games']['game']));
   	return res.render('nflWeeklySchedule', { title: 'NFL Home', sport: 'NFL', obj: schedule['games']['game']});
   });
@@ -68,6 +120,32 @@ exports.loadNHLPage = function(req, res) {
   sportsdata_nhl.getDailySchedule(year, month, day, function(schedule) {
   	console.log(JSON.stringify(schedule.league['daily-schedule'][0]['games']));
   	return res.render('nhlSchedule', { title: 'NHL Home', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
+  });
+}
+
+exports.loadNHLYesterday = function(req, res) {
+  var date = new Date();
+  date.setDate(date.getDate()-1);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  var day = date.getDate();
+  console.log(year+' '+month+' '+day);
+  sportsdata_nhl.getDailySchedule(year, month, day, function(schedule) {
+    console.log(JSON.stringify(schedule.league['daily-schedule'][0]['games']));
+    return res.render('nhlScheduleYesterday', { title: 'NHL Home', heading: date.toDateString()+' NHL Schedule', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
+  });
+}
+
+exports.loadNHLTomorrow = function(req, res) {
+  var date = new Date();
+  date.setDate(date.getDate()+1);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  var day = date.getDate();
+  console.log(year+' '+month+' '+day);
+  sportsdata_nhl.getDailySchedule(year, month, day, function(schedule) {
+    console.log(JSON.stringify(schedule.league['daily-schedule'][0]['games']));
+    return res.render('nhlScheduleTomorrow', { title: 'NHL Home', heading: date.toDateString()+' NHL Schedule', sport: schedule.league['$'].name, obj: schedule.league['daily-schedule'][0]['games'][0]['game']});
   });
 }
 

@@ -60,13 +60,13 @@ exports.putUser = function(req, res) {
 //delete an user
 exports.deleteUser = function(req, res) {
   console.log('deleting a user');
-  var user = {firstname:req.params.firstname,
-    lastname:req.params.lastname};
+  var user = {username:req.params.username};
+  console.log(user);
     mongo.delete( req.params.collection, 
      user,
      function(model) {
-      res.render('home');
-    }
+        res.render('home');
+      }
     );
   }
 
