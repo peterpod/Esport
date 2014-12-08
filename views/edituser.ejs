@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="../../../../../js/bootstrap.js"></script>
   <script src="js/underscore.js"></script>
   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
   <script src="../../../../../../js/form.js"> </script>
@@ -32,16 +32,18 @@
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-6">
+        <div id ="alert">
+        </div>
         <h1>Edit User</h1>
         <form id="edit" class="form-signin" role="form" style='margin:0px;'>
-          <input type="username" id="username" class="form-control" placeholder="<%= user.username %>" required autofocus>
+          Username<input type="username" id="username" class="form-control" placeholder="<%= user.username %>" required autofocus>
           <label for="inputPassword" class="sr-only">Password</label>
           Password<input type="password" id="password" class="form-control" placeholder="<%= user.password %>" required style="margin:0px;">
           <label for="firstname" class="sr-only">First Name</label>
           First Name<input id="firstname" class="form-control" placeholder="<%= user.firstname %>" required>
           <label for="lastname" class="sr-only">Last Name</label>
           Last Name<input id="lastname" class="form-control" placeholder="<%= user.lastname %>" required>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Edit User Account</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="addAlert()">Edit User Account</button>
         </form>
       </div>
     </div>

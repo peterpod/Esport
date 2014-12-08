@@ -1,3 +1,18 @@
+//This is used to add alerts on the user edit page
+function addAlert(){
+    $("#alert").append("<div id='alert-success' class='alert alert-success'></div>");
+    $('#alert-success').append("<a href='#' class='close' data-dismiss='alert'> </a>");
+    $('#alert-success').append("<strong>Success</strong> User info was updated.");
+    $("#alert").delay(3000).fadeOut('slow');
+};
+
+function addCreateAlert(){
+    $("#alert").append("<div id='alert-success' class='alert alert-success'></div>");
+    $('#alert-success').append("<a href='#' class='close' data-dismiss='alert'> </a>");
+    $('#alert-success').append("<strong>Success</strong> User account was created.");
+    $("#alert").delay(3000).fadeOut('slow');
+};
+
 var counter = 0;
 var limit = 1;
 // this function is being used to add my redirect button so that after

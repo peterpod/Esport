@@ -65,7 +65,7 @@ exports.deleteUser = function(req, res) {
     mongo.delete( req.params.collection, 
      user,
      function(model) {
-      res.render('success', {title: 'Mongo Demo', obj: model});
+      res.render('home');
     }
     );
   }

@@ -32,6 +32,8 @@
 		<!-- Example row of columns -->
 		<div class="row">
 			<div class="col-md-6">
+				<div id = "alert">
+				</div>
 				<h1>Create a new Account</h1>
 				<form id="signup" class="form-signin" role="form" style='margin:0px;'>
 					<label for="inputEmail" class="sr-only">Email address</label>
@@ -42,7 +44,7 @@
 					<input id="firstname" class="form-control" placeholder="First Name" required>
 					<label for="lastname" class="sr-only">Last Name</label>
 					<input id="lastname" class="form-control" placeholder="Last Name" required>
-					<button class="btn btn-lg btn-primary btn-block" type="submit" onClick="addButton();">Create New User</button>
+					<button class="btn btn-lg btn-primary btn-block" type="submit" onClick="addButton(); addCreateAlert();">Create New User</button>
 				</form>
 			</div>
 		</div>
