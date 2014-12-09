@@ -7,7 +7,6 @@ var mongoClient = require('mongodb').MongoClient;
  * The path part (here "fallTest") is the name of the databas
  */
  var url = 'mongodb://localhost:27017/Esport';
-//var url = 'mongodb://admin:3LB-WfVvI38W@127.1.244.2:33333/esport'
 // if OPENSHIFT env variables are present, use the available connection info:
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
   url = 'mongodb://'+ process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +

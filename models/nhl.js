@@ -1,7 +1,7 @@
 var sportsdata_nhl = require('sportsdata').NHL;
 
 // Init the object with the access level, version, apikey, seasonID, and season you care about
-sportsdata_nhl.init('t', 3,  '5c2dukkdmh37u2tvkma2euvy', '2014', 'REG');
+sportsdata_nhl.init('t', 3,  'YOUR_API_KEY', '2014', 'REG');
 
 exports.getDailySchedule = function(year, month, day, callback) {
 	sportsdata_nhl.getDailySchedule(year, month, day, function(error, schedule) {

@@ -1,7 +1,7 @@
 var sportsdata_nba = require('sportsdata').NBA;
 
 // Init the object with the access level, version, apikey, seasonID, and season you care about
-sportsdata_nba.init('t', 3,  'fpmwbwg7ufnj644png84vaq3', '2014', 'REG');
+sportsdata_nba.init('t', 3,  'YOUR_API_KEY', '2014', 'REG');
 
 // Get the season schedule
 exports.getSeasonSchedule = function(callback) {

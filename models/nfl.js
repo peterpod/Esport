@@ -1,7 +1,7 @@
 var sportsdata_nfl = require('sportsdata').NFL;
 
 // Init the object with the access level, version, apikey, year, and season you care about
-sportsdata_nfl.init('t', 1, 'swvzkn6a54ej3gv6ja7aqren', '2014', 'REG');
+sportsdata_nfl.init('t', 1, 'YOUR_API_KEY', '2014', 'REG');
 
 
 // Get the weekly schedule
