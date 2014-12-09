@@ -7,7 +7,6 @@
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="js/underscore.js"></script>
   <link rel="stylesheet" type="text/css" href="css/app.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 </head>
@@ -50,11 +49,15 @@
         <% var now = new Date()  %>
         <h2><%= obj[i]['home'][0]['$'].name %> Vs <%= obj[i]['away'][0]['$'].name %></h2>
         Game Date: <%= date.toDateString() %></br>
+        Game Time: <%= date.toLocaleTimeString() %></br>
         Status: <%= obj[i]['$'].status %></br>
         Coverage: <%= obj[i]['$'].coverage %></br>
         Venue: <%= obj[i]['venue'][0]['$'].name %></br>
         Capacity: <%= obj[i]['venue'][0]['$'].capacity %></br>
-        <a class="btn btn-default" href= 'nhl/boxscore/<%= obj[i]['$']['id']%>' role="button">Boxscore</a><br>
+        <% if (now > date) { %>
+        <a class="btn btn-default" href= 'nhl/boxscore/<%= obj[i]['$']['id']%>' role="button">Boxscore</a>
+        <% } %>
+        <br>
         <% if (i<obj.length-1) { %>
         <hr>
         <% } %>

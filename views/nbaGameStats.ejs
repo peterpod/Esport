@@ -6,8 +6,7 @@
  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
  <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
- <script src="js/bootstrap.js"></script>
- <script src="js/underscore.js"></script>
+ <script src="../../js/bootstrap.js"></script>
  <link rel="stylesheet" type="text/css" href="../../css/app.css">
  <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
 </head>
@@ -46,41 +45,80 @@
          <td class="nbaGIHScr"> <%=obj['game']['team'][1]['$'].points%></td>
       </tr>
    </table>
-   <div class='table-responsive'>
-   <table class='table'>
-      <tr>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][0]['$'].points%> </td>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][1]['$'].points%> </td>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][2]['$'].points%> </td>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][3]['$'].points%> </td>
-         <td class="nbaGIQtrPtsLast"><%=obj['game']['team'][0]['$'].points%> </td>
-      </tr>
-      <tr>
-         <td class="nbaGIQtrStatus">
-            <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
-         </td>
-         <td class="nbaGIQtrStatus">
-            <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
-         </td>
-         <td class="nbaGIQtrStatus">
-            <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
-         </td>
-         <td class="nbaGIQtrStatus">
-            <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
-         </td>
-         <td class="nbaGIQtrStatus">
-            <div id="nbaGIQtrIndic" style="background: rgb(204, 204, 204) none repeat scroll 0% 0%; width: 100%; height: 9px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"></div>
-         </td>
-      </tr>
-      <tr>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][0]['$'].points%> </td>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][1]['$'].points%> </td>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][2]['$'].points%> </td>
-         <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][3]['$'].points%> </td>
-         <td class="nbaGIQtrPtsLast"><%=obj['game']['team'][1]['$'].points%> </td>
-      </tr>
-   </table>
-   </div>
+   <div class='table-responsibe'>
+         <table class='table'>
+            <tr>
+               <td>Quarter 1</td>
+               <td>Quarter 2</td>
+               <td>Quarter 3</td>
+               <td>Quarter 4</td>
+               <td>Final</td>
+            </tr>
+            <tr>
+               <% if(obj['game']['team'][0]['scoring'][0]['quarter'][0] !== undefined ) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][0]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][0]['scoring'][0]['quarter'][1] !== undefined) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][1]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][0]['scoring'][0]['quarter'][2] !== undefined) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][2]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][0]['scoring'][0]['quarter'][3] !== undefined) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][0]['scoring'][0]['quarter'][3]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <td class="nbaGIQtrPtsLast"><%=obj['game']['team'][0]['$'].points%> </td>
+            </tr>
+            <tr>
+               <td class="nbaGIQtrStatus">
+                  <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
+               </td>
+               <td class="nbaGIQtrStatus">
+                  <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
+               </td>
+               <td class="nbaGIQtrStatus">
+                  <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
+               </td>
+               <td class="nbaGIQtrStatus">
+                  <div id="nbaGIQtrIndic" style="width:100%;height:9px;background:#cc0000;"></div>
+               </td>
+               <td class="nbaGIQtrStatus">
+                  <div id="nbaGIQtrIndic" style="background: rgb(204, 204, 204) none repeat scroll 0% 0%; width: 100%; height: 9px; -moz-background-clip: border; -moz-background-origin: padding; -moz-background-inline-policy: continuous;"></div>
+               </td>
+            </tr>
+             <tr>
+               <% if(obj['game']['team'][1]['scoring'][0]['quarter'][0] !== undefined ) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][0]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][1]['scoring'][0]['quarter'][1] !== undefined) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][1]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][1]['scoring'][0]['quarter'][2] !== undefined) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][2]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][1]['scoring'][0]['quarter'][3] !== undefined) { %>
+                  <td class="nbaGIQtrPts"><%=obj['game']['team'][1]['scoring'][0]['quarter'][3]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <td class="nbaGIQtrPtsLast"><%=obj['game']['team'][1]['$'].points%> </td>
+            </tr>
+         </table>
+         </div>
 </div>
 </div>
 

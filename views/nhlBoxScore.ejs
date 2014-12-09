@@ -6,8 +6,7 @@
  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
  <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
- <script src="js/bootstrap.js"></script>
- <script src="js/underscore.js"></script>
+ <script src="../../js/bootstrap.js"></script>
  <link rel="stylesheet" type="text/css" href="../../css/app.css">
  <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.css">
 </head>
@@ -66,10 +65,26 @@
                <td>Final</td>
             </tr>
             <tr>
-               <td><%=obj['game']['team'][0]['scoring'][0]['period'][0]['$'].points%> </td>
-               <td><%=obj['game']['team'][0]['scoring'][0]['period'][1]['$'].points%> </td>
-               <td><%=obj['game']['team'][0]['scoring'][0]['period'][2]['$'].points%> </td>
-               <td><%=obj['game']['team'][0]['$'].points%> </td>
+               <% if(obj['game']['team'][0]['scoring'][0]['period'][0]['$'].points !== undefined ) { %>
+                   <td><%=obj['game']['team'][0]['scoring'][0]['period'][0]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][0]['scoring'][0]['period'][1]['$'].points !== undefined ) { %>
+                   <td><%=obj['game']['team'][0]['scoring'][0]['period'][1]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][0]['scoring'][0]['period'][2]['$'].points !== undefined ) { %>
+                   <td><%=obj['game']['team'][0]['scoring'][0]['period'][2]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][0]['$'].points !== undefined ) { %>
+                      <td><%=obj['game']['team'][0]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             </tr>
             <tr>
                <td>
@@ -86,10 +101,26 @@
                </td>
             </tr>
             <tr>
-               <td ><%=obj['game']['team'][1]['scoring'][0]['period'][0]['$'].points%> </td>
-               <td><%=obj['game']['team'][1]['scoring'][0]['period'][1]['$'].points%> </td>
-               <td><%=obj['game']['team'][1]['scoring'][0]['period'][2]['$'].points%> </td>
-               <td><%=obj['game']['team'][1]['$'].points%> </td>
+               <% if(obj['game']['team'][1]['scoring'][0]['period'][0]['$'].points !== undefined ) { %>
+                   <td><%=obj['game']['team'][1]['scoring'][0]['period'][0]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][1]['scoring'][0]['period'][1]['$'].points !== undefined ) { %>
+                   <td><%=obj['game']['team'][1]['scoring'][0]['period'][1]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][1]['scoring'][0]['period'][2]['$'].points !== undefined ) { %>
+                   <td><%=obj['game']['team'][1]['scoring'][0]['period'][2]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
+               <% if(obj['game']['team'][1]['$'].points !== undefined ) { %>
+                      <td><%=obj['game']['team'][1]['$'].points%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             </tr>
          </table>
          </div>
@@ -122,7 +153,11 @@
          <tr >
             <td>Assists Leader</td><td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['$'].full_name%> </td>
             <td ><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['$'].primary_position%> </td>
-            <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+            <% if(obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['time_on_ice'][0]['$'].total !== undefined ) { %>
+                   <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].assists %></td>
             <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocked_att %></td>
             <td><%=obj['game']['team'][0]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocked_shots %></td>
@@ -139,7 +174,11 @@
          <tr >
             <td>Goals Leader</td><td class="b"><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['$'].full_name%> </td>
             <td ><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['$'].primary_position%> </td>
-            <td><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+            <% if(obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['time_on_ice'][0]['$'].total !== undefined ) { %>
+                   <td><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             <td><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['statistics'][0]['$'].assists %></td>
             <td><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['statistics'][0]['$'].blocked_att %></td>
             <td><%=obj['game']['team'][0]['leaders'][0]['goals'][0]['player'][0]['statistics'][0]['$'].blocked_shots %></td>
@@ -156,7 +195,11 @@
          <tr >
             <td>Points Leader</td><td class="b"><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['$'].full_name%> </td>
             <td ><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['$'].primary_position%> </td>
-            <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+            <% if(obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['time_on_ice'][0]['$'].total !== undefined ) { %>
+                   <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].assists %></td>
             <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocked_att %></td>
             <td><%=obj['game']['team'][0]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocked_shots %></td>
@@ -200,7 +243,11 @@
          <tr >
             <td>Assists Leader</td><td class="b"><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['$'].full_name%> </td>
             <td ><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['$'].primary_position%> </td>
-            <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+            <% if(obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['time_on_ice'][0]['$'].total !== undefined ) { %>
+                   <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].assists %></td>
             <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocked_att %></td>
             <td><%=obj['game']['team'][1]['leaders'][0]['assists'][0]['player'][0]['statistics'][0]['$'].blocked_shots %></td>
@@ -217,7 +264,11 @@
          <tr >
             <td>Goals Leader</td><td class="b"><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['$'].full_name%> </td>
             <td ><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['$'].primary_position%> </td>
-            <td><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+            <% if(obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['time_on_ice'][0]['$'].total !== undefined ) { %>
+                   <td><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             <td><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['statistics'][0]['$'].assists %></td>
             <td><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['statistics'][0]['$'].blocked_att %></td>
             <td><%=obj['game']['team'][1]['leaders'][0]['goals'][0]['player'][0]['statistics'][0]['$'].blocked_shots %></td>
@@ -234,7 +285,11 @@
          <tr >
             <td>Points Leader</td><td class="b"><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['$'].full_name%> </td>
             <td ><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['$'].primary_position%> </td>
-            <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+            <% if(obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['time_on_ice'][0]['$'].total !== undefined ) { %>
+                   <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['time_on_ice'][0]['$'].total%> </td>
+               <% } else { %>
+                  <td>0</td>
+               <% } %>
             <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].assists %></td>
             <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocked_att %></td>
             <td><%=obj['game']['team'][1]['leaders'][0]['points'][0]['player'][0]['statistics'][0]['$'].blocked_shots %></td>
